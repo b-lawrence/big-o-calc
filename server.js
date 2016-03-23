@@ -1,16 +1,14 @@
 (() => {
   'use strict';
-  
-  const http = require('http'),
-    express = require('express'),
-    path = require('path'),
-    logger = require('morgan'),
-    app = express();
 
-  /**
-   * Normalize a port into a number, string, or false.
-   */
-  var normalizePort = (val) => {
+  const http = require('http'),
+    app = require('./server/app'),
+
+    /**
+     * Normalize a port into a number, string, or false.
+     */
+
+    normalizePort = (val) => {
       let port = parseInt(val, 10);
       if (isNaN(port)) {
         // named pipe
@@ -30,7 +28,7 @@
       let addr = server.address();
       let bind = typeof addr === 'string' ? `pipe ${addr}` :
         `port ${addr.port}`;
-      console.log('Listening on ' + bind);
+      console.log(`Listening on ${bind}`);
     },
 
     /**
@@ -40,34 +38,31 @@
       if (error.syscall !== 'listen') {
         throw error;
       }
-      let bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+      let bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`;
       // handle specific listen errors with friendly messages
       switch (error.code) {
-      case 'EACCES':
-        console.error(bind + ' requires elevated privileges');
-        process.exit(1);
-        break;
-      case 'EADDRINUSE':
-        console.error(bind + ' is already in use');
-        process.exit(1);
-        break;
-      default:
-        throw error;
+        case 'EACCES':
+          console.error(`${bind} requires elevated privileges`);
+          process.exit(1);
+          break;
+        case 'EADDRINUSE':
+          console.error(`${bind} is already in use`);
+          process.exit(1);
+          break;
+        default:
+          throw error;
       }
     },
 
     /**
      * Get port from environment and store in Express.
      */
-    port = normalizePort(process.env.PORT || '3000');
+    port = normalizePort(process.env.PORT || '3000'),
 
-  app.use(logger('dev'));
-  app.use(express.static(path.join(__dirname, './public')));
-
-  /**
-   * Create HTTP server.
-   */
-  var server = http.createServer(app);
+    /**
+     * Create HTTP server.
+     */
+    server = http.createServer(app);
 
   /**
    * Listen on provided port, on all network interfaces.
