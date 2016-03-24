@@ -19,8 +19,6 @@
   "dependencies": {
     "jquery": "^2.2.2",
     "semantic": "semantic-ui#^2.1.8",
-    "ace-builds": "^1.2.3",
-    "handlebars": "^4.0.5",
-    "requirejs": "^2.2.0"
+    "ace-builds": "^1.2.3"
   }
 }
