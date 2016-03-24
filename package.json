@@ -1,0 +1,32 @@
+{
+  "name": "big-o-calc",
+  "version": "1.0.0",
+  "description": "Get the Big O notation of any js code in realtime",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js --harmony"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b-lawrence/big-o-calc.git"
+  },
+  "author": "Lawrence McBhee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/b-lawrence/big-o-calc/issues"
+  },
+  "homepage": "https://github.com/b-lawrence/big-o-calc#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "gulp": "^3.9.1",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "gulp-concat": "^2.6.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
