@@ -1,0 +1,26 @@
+{
+  "name": "big-o-calc",
+  "description": "Get the Big O notation of any js code in realtime",
+  "main": "server.js",
+  "authors": [
+    "Lawrence McBhee"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/b-lawrence/big-o-calc",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "semantic": "semantic-ui#^2.1.8",
+    "ace-builds": "^1.2.3",
+    "handlebars": "^4.0.5",
+    "requirejs": "^2.2.0"
+  }
+}
