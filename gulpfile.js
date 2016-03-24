@@ -3,6 +3,7 @@ const gulp = require('gulp'),
   sourcemaps = require('gulp-sourcemaps'),
   concat = require('gulp-concat'),
   sass = require('gulp-sass'),
+  bower = require('gulp-bower'),
   paths = {
     scripts: [
       './assets/js/themes-list.js',
@@ -37,10 +38,15 @@ gulp.task('scripts', () => {
     .pipe(gulp.dest('./public/js/'));
 });
 
+gulp.task('bower', () => {
+  return bower()
+    .pipe(gulp.dest('./public/lib/'));
+});
+
 gulp.task('sass', () => {
   return gulp.src(paths.styles)
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest('./public/css/'));
 });
 
 gulp.task('watch', () => {
@@ -48,5 +54,5 @@ gulp.task('watch', () => {
   gulp.watch(paths.scripts, ['scripts']);
 });
 
-gulp.task('build', ['scripts', 'sass']);
+gulp.task('build', ['bower', 'scripts', 'sass']);
 gulp.task('default', ['build', 'watch', 'nodemon']);
