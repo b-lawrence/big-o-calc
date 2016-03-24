@@ -13,7 +13,7 @@
   "noempty": true,
   "nonew": true,
   "esnext": true,
-  "globals": {
+  "predef": {
     "$" : true,
     "jQuery" : true,
     "jasmine" : true,
@@ -35,9 +35,10 @@
     "by" : true,
     "browser" : true,
     "todoapp" : true,
-    "process" : true
+    "process" : true,
+    "ace": true
   },
-  "quotmark": true,
+  "quotmark": "single",
   "trailing": true,
   "undef": true,
   "unused": true
