@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ title }}</title>
+  {{! css }}
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic/dist/semantic.min.css">
+</head>
+<body>
+  <div>
+    {{! Header }}
+    {{> "header"}}
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+    {{! footer}}
+    {{> "footer"}}
+  </div>
+
+  {{! script }}
+  <script src="lib/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="lib/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="lib/semantic/dist/semantic.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="lib/handlebars/handlebars.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/bundle.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
